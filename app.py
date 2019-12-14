@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -12,12 +12,12 @@ def weather():
     w = 78
     w -= 10
     if w > 65 and w < 90:
-        return "It's nice outside"
+        data = {"message": "It's nice outside"}
     if w > 45 and w < 66:
-        return "It's ok outside"
+        data = {"message": "It's ok outside"}
     else:
-        return "It's miserable outside"
-
+        data = {"message": "It's miserable outside"}
+    return render_template("weather.html", title=f"WeatherApp - {message}", data)
 
 if __name__ == '__main__':
     app.run(debug=True)
