@@ -17,7 +17,7 @@ def weather():
         data = {"message": "It's ok outside"}
     else:
         data = {"message": "It's miserable outside"}
-    return render_template("weather.html", title=f"WeatherApp - {message}", data=data)
+    return render_template("weather.html", title="WeatherApp", data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
