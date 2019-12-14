@@ -13,7 +13,7 @@ def weather():
     w -= 10
     if w > 65 and w < 90:
         data = {"message": "It's nice outside"}
-    if w > 45 and w < 66:
+    elif w > 45 and w < 66:
         data = {"message": "It's ok outside"}
     else:
         data = {"message": "It's miserable outside"}
