@@ -1,4 +1,10 @@
-from app import create_app
+import flask from Flask
+from flask_test import routes
+from flask_test import config
 
-APP = create_app( )
+app = Flask(__name__)
+
+# Config class
+app.config.from_object(Config)
+
 
