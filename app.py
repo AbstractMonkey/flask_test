@@ -9,7 +9,15 @@ def hello():
 
 @app.route('/weather')
 def weather():
-    return "It's shitty outside"
+    w = 78
+    w -= 10
+    if w > 65 and w < 90:
+        return "It's nice outside"
+    if w > 45 and w < 66:
+        return "It's ok outside"
+    else:
+        return "It's miserable outside"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
